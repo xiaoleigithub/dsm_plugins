@@ -8,8 +8,10 @@ vAction=$1
 function install() {
     #备份 VideoStation's ffmpeg
     mv -n /var/packages/VideoStation/target/bin/ffmpeg /var/packages/VideoStation/target/bin/ffmpeg.orig
+    #下载ffmpeg脚本-备份
+    #wget -O - https://gist.githubusercontent.com/BenjaminPoncet/bbef9edc1d0800528813e75c1669e57e/raw/ffmpeg-wrapper >/var/packages/VideoStation/target/bin/ffmpeg
     #下载ffmpeg脚本
-    wget -O - https://gist.githubusercontent.com/BenjaminPoncet/bbef9edc1d0800528813e75c1669e57e/raw/ffmpeg-wrapper >/var/packages/VideoStation/target/bin/ffmpeg
+    wget -O - https://gist.githubusercontent.com/xiaoleigithub/feb1f7229f86910e1de31b6a7c556ee8/raw/ffmpeg-wrapper >/var/packages/VideoStation/target/bin/ffmpeg
     #设置脚本相应权限
     chown root:VideoStation /var/packages/VideoStation/target/bin/ffmpeg
     chmod 750 /var/packages/VideoStation/target/bin/ffmpeg
